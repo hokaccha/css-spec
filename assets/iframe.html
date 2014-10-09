@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>css spec</title>
+<script>
+window.addEventListener('message', function(e) {
+  var link = document.createElement('link');
+  link.setAttribute('rel', 'stylesheet');
+  link.setAttribute('href', e.data.cssPath);
+  document.getElementsByTagName('head')[0].appendChild(link);
+
+  link.addEventListener('load', function() {
+    var style = document.styleSheets[0];
+    var result = [].map.call(style.rules, function(rule) {
+      var styles = {};
+      [].forEach.call(rule.style, function(s) {
+        styles[s] = rule.style[s];
+      });
+      return {
+        selector: rule.selectorText,
+        styles: styles
+      };
+    });
+    window.parent.postMessage(result, '*');
+  });
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>

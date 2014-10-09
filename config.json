@@ -1,0 +1,7 @@
+{
+    "target": "example/css/app.css",
+    "specs": [
+        "example/spec/header",
+        "example/spec/nav"
+    ]
+}

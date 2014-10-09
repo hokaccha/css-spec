@@ -1,0 +1,27 @@
+#css_spec_html {
+  position: absolute;
+  right: 10000px;
+}
+
+#css_spec_result {
+}
+
+#css_spec_result .specPath {
+  font-size: 24px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+#css_spec_result .selector {
+  margin: 10px 0 0 10px;
+}
+
+#css_spec_result .ok {
+  margin-left: 30px;
+  color: #29C13D;
+}
+
+#css_spec_result .ng {
+  margin-left: 30px;
+  color: #ff031c;
+}
